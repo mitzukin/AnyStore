@@ -13,13 +13,15 @@ const Login = () => {
           <ShuffleGrid />
         </div>
         <div className="flex flex-col items-center w-full mt-28 lg:mt-20 lg:w-2/5">
-          <p className="text-5xl font-bold text-center md:text-7xl mx-14 font-script">
-            Discover the Perfect Shoes
-          </p>
-          <p className="mt-2 mb-20 text-xl lg:text-4xl font-script">
-            & Share your Styles
-          </p>
-
+          <div>
+            <p className="text-5xl font-bold text-center text-primary md:text-7xl mx-14 font-script">
+              Discover the Perfect Shoes
+            </p>
+            </div>
+            <p className="mt-2 mb-20 text-primary text-center-xl lg:text-4xl font-script">
+              & Share your Styles
+            </p>
+         
           <div className="flex items-center justify-center ">
             <div className="w-80 md:w-96">
               <form className="flex flex-col mt-4 font-roboto">
@@ -40,11 +42,11 @@ const Login = () => {
                 <input
                   type="submit"
                   value="Log In"
-                  className="p-2 py-3 mt-5 text-sm text-white bg-gray-900 cursor-pointer hover:bg-gray-800 "
+                  className="p-2 py-3 mt-5 text-sm text-white duration-300 cursor-pointer bg-primary hover:bg-gray-900 hover:scale-105 "
                 />
                 <div class="flex items-center mt-5">
                   <div class="flex-1 border-b border-gray-300"></div>
-                  <div class="mx-4 text-gray-500 text-sm" >or</div>
+                  <div class="mx-4 text-gray-500 text-sm">or</div>
                   <div class="flex-1 border-b border-gray-300"></div>
                 </div>
 
@@ -181,7 +183,7 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 grid-rows-3 h-[600px] md:h-[800px] gap-2 ">
+    <div className="hidden md:grid lg:grid-cols-3 lg:grid-rows-3 grid-cols-3 grid-rows-2 h-[300px] md:h-[800px] gap-2 ">
       {squares.map((sq) => sq)}
     </div>
   );

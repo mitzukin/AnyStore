@@ -11,6 +11,9 @@ export default {
         inter: ['Inter', 'sans-serif'],
         script: ['Outfit', 'sans-serif']
       },
+      colors:{
+        primary:"#111111"
+      }
     },
   },
   plugins: [],

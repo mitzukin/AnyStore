@@ -22,6 +22,7 @@ const PhoneNumberValidation = () => {
       <label className='text-xs '>
         Contact:
         <PhoneInput
+        
           country={'ph'}
           value={phoneNumber}
           onChange={handleChange}

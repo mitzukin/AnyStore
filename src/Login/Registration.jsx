@@ -23,6 +23,7 @@ const Registration = () => {
                 id="email"
                 name="email"
                 placeholder="JohnDoe@gmail.com"
+                
               />
               <TextInput
                 label="Password"
