@@ -1,5 +1,5 @@
 import React from "react";
-import TextInput from "./textInput";
+import TextInput from "../Components/textInput";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook, BsTwitter } from "react-icons/bs";
 import { motion } from "framer-motion";
