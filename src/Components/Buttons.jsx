@@ -20,3 +20,23 @@ export function SecondaryButton(props) {
         </button>
     )
 }
+
+export function ProductButtonPrimary(props) {
+    return (
+        <Link to={props.to}>
+        <button className="bg-[#111111] font-medium font-Poppins border border-black px-8 py-3 rounded-lg text-base tracking-wide text-white hover:bg-black/80 hover:border hover:border-black hover:text-white duration-200 ease-linear mt-1">
+                {props.title}
+                </button>
+                </Link>
+    )
+}
+
+export function ProductButtonSecondary(props) {
+    return (
+        <button className="border border-[#111111] text-black font-medium font-Poppins px-8 py-3 rounded-lg text-base tracking-wide hover:bg-gray-100 duration-200 ease-linear mt-1">
+            <Link to={props.to}>
+                {props.title}
+            </Link>
+        </button>
+    )
+}

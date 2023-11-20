@@ -3,8 +3,14 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Navigation from "./Components/Navigation";
-import Hero from "./Components/Hero";
+import Hero from "./Pages/Hero";
 import Header from "./Components/Header";
+import About from "./Pages/About";
+import Contact from './Pages/Contact'
+import Cart from "./Pages/Cart";
+import Products from "./Pages/Products";
+import ProductPreview from "./Components/ProductPreview";
+
 
 const HeroLayout = () => {
   return (
@@ -27,6 +33,48 @@ const RegisterLayout = () => {
 const LoginLayout = () => {
   return (
     <div>
+    <Header />
+  <Navigation />
+    <Outlet />
+    </div>
+  )
+}
+
+const ProductLayout = () => {
+  return (
+    <div>
+    <Header />
+  <Navigation />
+    <Outlet />
+    </div>
+  )
+}
+
+const AboutLayout = () => {
+  return (
+    <div>
+    <Header />
+  <Navigation />
+    <Outlet />
+    </div>
+  )
+}
+
+const CartLayout = () => {
+  return (
+    <div>
+    <Header />
+  <Navigation />
+    <Outlet />
+    </div>
+  )
+}
+
+const ContactLayout = () => {
+  return (
+    <div>
+    <Header />
+  <Navigation />
     <Outlet />
     </div>
   )
@@ -62,6 +110,50 @@ const router = createBrowserRouter([
       {
         path: "/AnyStore/login",
         element: <Login />
+      }
+    ]
+  },
+  {
+    path: "/AnyStore/products",
+    element: <ProductLayout />,
+    children: [
+      {
+        path: "/AnyStore/products",
+        element: <Products />
+      },
+      {
+        path: ":productId",
+        element: <ProductPreview />
+      },
+    ]
+  },
+  {
+    path: "/AnyStore/about",
+    element: <AboutLayout />,
+    children: [
+      {
+        path: "/AnyStore/about",
+        element: <About />
+      }
+    ]
+  },
+  {
+    path: "/AnyStore/contact",
+    element: <ContactLayout />,
+    children: [
+      {
+        path: "/AnyStore/contact",
+        element: <Contact />
+      }
+    ]
+  },
+  {
+    path: "/AnyStore/cart",
+    element: <CartLayout />,
+    children: [
+      {
+        path: "/AnyStore/cart",
+        element: <Cart />
       }
     ]
   },
