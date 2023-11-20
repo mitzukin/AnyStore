@@ -1,12 +1,5 @@
+
 import React from "react";
-<<<<<<< HEAD
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home/Home";
-import Navbar from "./Components/Navbar/Navbar";
-import Login from "./Login/Login";
-import Registration from "./Login/Registration";
-import Preview from "./Pages/Preview/Preview";
-=======
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
@@ -18,7 +11,6 @@ import Contact from './Pages/Contact'
 import Cart from "./Pages/Cart";
 import Products from "./Pages/Products";
 import ProductPreview from "./Components/ProductPreview";
->>>>>>> 4401a8a335db597424d57609e5be547184eb3274
 
 
 const HeroLayout = () => {
@@ -170,20 +162,8 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-<<<<<<< HEAD
-    <BrowserRouter>
-    <div className="">
-      <Navbar/>
-      <Preview/>
-      <Routes>
-        <Route index={true} element={<Home />} />
-        <Route path="registration" element={<Registration />} />
-        <Route path="login" element={<Login />} />
-      </Routes>
-=======
     <div className="app">
         <RouterProvider router={router} />
->>>>>>> 4401a8a335db597424d57609e5be547184eb3274
     </div>
   );
 };
