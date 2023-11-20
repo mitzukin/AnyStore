@@ -4,6 +4,7 @@ import Home from "./Pages/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Login from "./Login/Login";
 import Registration from "./Login/Registration";
+import Preview from "./Pages/Preview/Preview";
 
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
     <BrowserRouter>
     <div className="">
       <Navbar/>
+      <Preview/>
       <Routes>
         <Route index={true} element={<Home />} />
         <Route path="registration" element={<Registration />} />
