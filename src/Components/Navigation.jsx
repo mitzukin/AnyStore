@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { PrimaryButton } from './Buttons';
 import { Link } from 'react-router-dom';
+import { ShopContext } from '../Context/ProductContext';
+import { RxHamburgerMenu } from "react-icons/rx";
 
 
 function CartLogo(props) {
@@ -14,44 +16,64 @@ function CartLogo(props) {
 function LogoSection(props) {
   return (
     <Link to="/AnyStore" {...props}>
-    <div className="font-bold text-2xl">Reason Store</div>
-</Link>
+      <div className="font-bold md:text-2xl xs:text-xl">Reason Store</div>
+    </Link>
   )
 }
 
 
 const Navigation = () => {
-  
+
 
   const navItems = [
     { title: "Home", to: "/AnyStore/" },
-    { title: "Products", to: "/AnyStore/products/" },
+    { title: "Products", to: "/AnyStore/products" },
     { title: "About us", to: "/AnyStore/about" },
     { title: "Contact", to: "/AnyStore/contact" }
   ]
-  
+
   const [menu, setMenu] = useState([...navItems]);
+
+  const { getTotalProduct } = useContext(ShopContext)
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen)
+  }
 
 
   return (
-    <div className="w-full border border-b-gray-300">
+    <div className="w-full border border-b-gray-300 md:px-0 xs:px-2 relative">
       <div className="flex justify-between max-w-7xl mx-auto py-6 font-inter">
         {/*Left Section */}
         <div className="flex items-center justify-center gap-x-12">
           <LogoSection />
-          <div className="flex items-center justify-center gap-x-8">
+          <div className="md:flex items-center justify-center gap-x-8 hidden">
             {navItems.map((index, i) => (
-              <Link onClick={() => {setMenu(index.title)}}  className="relative text-base font-normal text-gray-900 cursor-pointer" key={i} to={index.to}>{index.title}{menu === index.title ? <div className='border border-gray-800 absolute w-full -bottom-10'></div> : <div></div>}</Link>
+              <Link onClick={() => { setMenu(index.title) }} className="relative text-base font-normal text-gray-800 cursor-pointer" key={i} to={index.to}>{index.title}{menu == index.title ? <div className='border border-gray-800 absolute w-full -bottom-[39px]'></div> : <div></div>}</Link>
             ))}
           </div>
         </div>
         {/*Right Section */}
-        <div className="flex items-center gap-x-6">
-          <CartLogo />
+        <div className="flex items-center md:gap-x-6 xs:space-x-3 relative">
+          <div className="relative flex justify-center items-center">
+            <CartLogo />
+            <div className="bg-black rounded-full text-white w-6 h-6 py-1 text-xs text-center absolute pointer-events-none -right-2 -top-2">
+              {getTotalProduct()}
+            </div>
+          </div>
           <PrimaryButton title="Sign in" to="/AnyStore/login" />
+          <RxHamburgerMenu className='text-3xl block md:hidden z-10 focus:text-white' onClick={handleClick} />
         </div>
+        {isOpen && (
+          <div className="absolute top-0 right-0 bg-black w-full h-screen">
+            sada
+          </div>
+        )}
       </div>
     </div>
+
   );
 };
 

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export function PrimaryButton(props) {
     return (
         <Link to={props.to}>
-        <button className="bg-[#111111] font-medium font-Poppins border border-black px-8 py-3 rounded-xl text-base tracking-wide text-white hover:bg-transparent hover:border hover:border-black hover:text-black duration-200 ease-linear">
+        <button className="bg-[#111111] hidden md:block font-medium font-Poppins border border-black px-8 py-3 rounded-xl text-base tracking-wide text-white hover:bg-transparent hover:border hover:border-black hover:text-black duration-200 ease-linear">
                 {props.title}
                 </button>
                 </Link>
@@ -38,5 +38,15 @@ export function ProductButtonSecondary(props) {
                 {props.title}
             </Link>
         </button>
+    )
+}
+
+export function CheckoutButton(props) {
+    return (
+        <Link to={props.to}>
+        <button className="w-full bg-[#111111] font-medium font-Poppins border border-black px-8 py-3 rounded-lg text-base tracking-wide text-white hover:bg-black/80 hover:border hover:border-black hover:text-white duration-200 ease-linear mt-1">
+                {props.title}
+                </button>
+                </Link>
     )
 }

@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { BsFacebook, BsTwitter } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -44,10 +45,10 @@ const Login = () => {
                   value="Log In"
                   className="p-2 py-3 mt-5 text-sm text-white duration-300 cursor-pointer bg-primary hover:bg-gray-900 hover:scale-105 "
                 />
-                <div class="flex items-center mt-5">
-                  <div class="flex-1 border-b border-gray-300"></div>
-                  <div class="mx-4 text-gray-500 text-sm">or</div>
-                  <div class="flex-1 border-b border-gray-300"></div>
+                <div className="flex items-center mt-5">
+                  <div className="flex-1 border-b border-gray-300"></div>
+                  <div className="mx-4 text-gray-500 text-sm">or</div>
+                  <div className="flex-1 border-b border-gray-300"></div>
                 </div>
 
                 <h1 className="mt-5 mb-5 text-sm text-center text-gray-500">
@@ -67,7 +68,7 @@ const Login = () => {
                 <p className="mt-10 text-sm text-center text-gray-500">
                   Dont have an account?{" "}
                   <span className="text-gray-900 underline ">
-                    <a href="">Sign Up for free</a>
+                    <Link to="/AnyStore/register">Sign Up for free</Link>
                   </span>
                 </p>
 

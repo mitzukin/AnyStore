@@ -6,163 +6,88 @@ import Navigation from "./Components/Navigation";
 import Hero from "./Pages/Hero";
 import Header from "./Components/Header";
 import About from "./Pages/About";
-import Contact from './Pages/Contact'
+import Contact from "./Pages/Contact";
 import Cart from "./Pages/Cart";
 import Products from "./Pages/Products";
 import ProductPreview from "./Components/ProductPreview";
 
-
-const HeroLayout = () => {
+const AppLayout = () => {
   return (
     <div>
       <Header />
-  <Navigation />
+      <Navigation />
       <Outlet />
     </div>
   );
 };
 
-const RegisterLayout = () => {
-  return (
-    <div>
-    <Outlet />
-    </div>
-  )
-}
-
-const LoginLayout = () => {
+const RegisterLoginLayout = () => {
   return (
     <div>
     <Header />
-  <Navigation />
-    <Outlet />
+      <Navigation />
+      <Outlet />;
     </div>
   )
-}
-
-const ProductLayout = () => {
-  return (
-    <div>
-    <Header />
-  <Navigation />
-    <Outlet />
-    </div>
-  )
-}
-
-const AboutLayout = () => {
-  return (
-    <div>
-    <Header />
-  <Navigation />
-    <Outlet />
-    </div>
-  )
-}
-
-const CartLayout = () => {
-  return (
-    <div>
-    <Header />
-  <Navigation />
-    <Outlet />
-    </div>
-  )
-}
-
-const ContactLayout = () => {
-  return (
-    <div>
-    <Header />
-  <Navigation />
-    <Outlet />
-    </div>
-  )
-}
-
+};
 
 const router = createBrowserRouter([
   {
     path: "/AnyStore",
-    element: <HeroLayout />,
+    element: <AppLayout />,
     children: [
-      
       {
         path: "/AnyStore",
         element: <Hero />,
+      },
+      {
+        path: "/AnyStore/products",
+        element: <Products />,
+      },
+      {
+        path: "/AnyStore/products/:productId",
+        element: <ProductPreview />,
+      },
+      {
+        path: "/AnyStore/about",
+        element: <About />,
+      },
+      {
+        path: "/AnyStore/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/AnyStore/cart",
+        element: <Cart />,
       },
     ],
   },
   {
     path: "/AnyStore/register",
-    element: <RegisterLayout />,
+    element: <RegisterLoginLayout />,
     children: [
       {
         path: "/AnyStore/register",
-        element: <Register />
-      }
-    ]
+        element: <Register />,
+      },
+    ],
   },
   {
     path: "/AnyStore/login",
-    element: <LoginLayout />,
+    element: <RegisterLoginLayout />,
     children: [
       {
         path: "/AnyStore/login",
-        element: <Login />
-      }
-    ]
-  },
-  {
-    path: "/AnyStore/products",
-    element: <ProductLayout />,
-    children: [
-      {
-        path: "/AnyStore/products",
-        element: <Products />
+        element: <Login />,
       },
-      {
-        path: ":productId",
-        element: <ProductPreview />
-      },
-    ]
-  },
-  {
-    path: "/AnyStore/about",
-    element: <AboutLayout />,
-    children: [
-      {
-        path: "/AnyStore/about",
-        element: <About />
-      }
-    ]
-  },
-  {
-    path: "/AnyStore/contact",
-    element: <ContactLayout />,
-    children: [
-      {
-        path: "/AnyStore/contact",
-        element: <Contact />
-      }
-    ]
-  },
-  {
-    path: "/AnyStore/cart",
-    element: <CartLayout />,
-    children: [
-      {
-        path: "/AnyStore/cart",
-        element: <Cart />
-      }
-    ]
+    ],
   },
 ]);
 
 const App = () => {
   return (
     <div className="app">
-        <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </div>
   );
 };

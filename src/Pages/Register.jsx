@@ -6,7 +6,6 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
 
-
 function PhoneNumberValidation() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [valid, setValid] = useState(true);
@@ -74,14 +73,16 @@ const Registration = () => {
                 type="password"
                 id="password"
                 name="password"
-                placeholder="Password"
+                placeholder="Enter your password"
+                autocomplete="new-password"
               />
               <TextInput
                 label="Confirm Password"
                 type="password"
                 id="repassword"
                 name="repassword"
-                placeholder="Confirm Password"
+                placeholder="Confirm your Password"
+                autocomplete="new-password"
               />
               <TextInput
                 label="First Name"
@@ -101,12 +102,12 @@ const Registration = () => {
               <input
                 type="submit"
                 value="Register"
-                className="p-2 py-3 mt-5 text-sm text-white bg-gray-900 cursor-pointer hover:bg-gray-800 "
+                className="p-2 py-3 mt-5 text-sm text-white bg-gray-900 cursor-pointer hover:bg-gray-800"
               />
-              <div class="flex items-center mt-5">
-                <div class="flex-1 border-b border-gray-300"></div>
-                <div class="mx-4 text-gray-500 text-sm">or</div>
-                <div class="flex-1 border-b border-gray-300"></div>
+              <div className="flex items-center mt-5">
+                <div className="flex-1 border-b border-gray-300"></div>
+                <div className="mx-4 text-gray-500 text-sm">or</div>
+                <div className="flex-1 border-b border-gray-300"></div>
               </div>
               <h1 className="mt-10 mb-5 text-sm text-center text-gray-500">
                 Sign up with{" "}
