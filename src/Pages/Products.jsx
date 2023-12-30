@@ -10,10 +10,10 @@ const Products = () => {
   const product = productItems.find((e) => e.id === Number(productId))
 
   return (
-    <div className="w-full h-full flex justify-between max-w-7xl mx-auto font-inter flex-col pb-10">
+    <div className="flex flex-col justify-between w-full h-full pb-10 mx-auto max-w-7xl font-inter">
       <div className="divide-y divide-gray-300">
-        <h1 className='text-center text-6xl font-poppins font-extrabold my-8'>New Stocks</h1>
-        <div className="py-8 flex items-center space-x-4 px-4">
+        <h1 className='my-8 text-6xl font-extrabold text-center font-poppins'>New Stocks</h1>
+        <div className="flex items-center px-4 py-8 space-x-4">
           <div className="text-xl font-semibold font-poppins">Category</div>
         </div>
       </div>
